@@ -3,3 +3,8 @@ type: module
 description: 'message system react'
 core: 8.x
 package: 'ms react'
+
+# Information added by Drupal.org packaging script on 2019-10-29
+version: '8.1.0'
+project: 'ms_react'
+datestamp: 1579505437
