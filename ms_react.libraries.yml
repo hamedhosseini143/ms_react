@@ -1,0 +1,14 @@
+ms_react:
+  js:
+    js/dist/index.js: { preprocess: false }
+  css:
+    theme:
+      css/custom.css: {}
+ms_react_notification:
+  js:
+    jsBlock/dist/index.js: { preprocess: false }
+
+ms_react_my_notification:
+  css:
+    theme:
+      css/customnotfi.css: {}

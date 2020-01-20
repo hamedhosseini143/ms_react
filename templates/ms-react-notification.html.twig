@@ -1,0 +1,12 @@
+<div class="ms_react_notification">
+  {%- for item in items -%}
+    <div class="alert alert-success" role="alert">
+      <p>{{ item.body }}</p>
+      <hr>
+    {% if item.file is not empty %}
+      <a target="_blank" class="btn btn-secondary btn-lg" href="{{ item.file }}">{{ 'download'|t }}</a>
+    {% endif %}
+      <span>{{ item.creat }}</span>
+    </div>
+  {%- endfor -%}
+</div>

@@ -1,0 +1,24 @@
+send role message:
+  title: 'Send role message'
+  description: 'send role message'
+create message:
+  title: 'Create message'
+  description: 'create message'
+view own message:
+  title: 'View own message'
+  description: 'view own message'
+view any message:
+  title: 'View any message'
+  description: 'view any message'
+delete any message:
+  title: 'delete any message'
+  description: 'delete any message'
+delete own message:
+  title: 'delete own message'
+  description: 'delete own message'
+view notification:
+  title: 'View notification'
+  description: 'view notification'
+delete one message:
+  title: 'delete one message'
+  description: 'delete one message'

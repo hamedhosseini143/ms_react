@@ -1,0 +1,109 @@
+ms_react.creat_message_form:
+  path: '/ms_react/creat-ms'
+  defaults:
+    _form: '\Drupal\ms_react\Form\CreatMessageForm'
+    _title_callback: '\Drupal\ms_react\Form\CreatMessageForm::getTitle'
+  requirements:
+    _permission: 'create message'
+
+ms_react.api_controller_getData:
+  path: '/ms_react/getdata/{mid}'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\ApiController::getMessage'
+    _title: 'api'
+  requirements:
+    _permission: 'view own message'
+ms_react.api_controller_deletOne:
+  path: '/ms_react/deletone/{msid}'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\ApiController::deleteMsid'
+    _title: 'api'
+  requirements:
+    _permission: 'delete one message'
+ms_react.api_controller_msNotification:
+  path: '/ms_react/notification'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\ApiController::msNotification'
+    _title: 'api'
+  requirements:
+    _permission: 'view own message'
+
+ms_react.api_controller_messageRoot:
+  path: '/ms_react/root/{mid}'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\ApiController::msRoot'
+    _title: 'api'
+  requirements:
+    _permission: 'view own message'
+
+ms_react.api_controller_creatMessage:
+  path: '/ms_react/creat_ms'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\ApiController::creatMessage'
+    _title: 'api'
+  requirements:
+    _permission: 'view own message'
+
+ms_react.api_controller_getroute:
+  path: '/ms_react/getRoute'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\ApiController::getRoute'
+    _title: 'api'
+  requirements:
+    _permission: 'view own message'
+ms_react.show_all_message_controller_allMessage:
+  path: '/ms_react/send'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\ShowAllMessageController::sendBoxMessage'
+    _title_callback: '\Drupal\ms_react\Controller\ShowAllMessageController::getTitle'
+  requirements:
+    _permission: 'view own message'
+
+ms_react.inbox_message_controller_InboxMessage:
+  path: '/ms_react/inbox'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\inboxMessageController::InboxMessage'
+    _title_callback: '\Drupal\ms_react\Controller\inboxMessageController::getTitle'
+  requirements:
+    _permission: 'view own message'
+
+ms_react.messaging_controller_messaging:
+  path: '/ms/chat/{mid}'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\messagingController::messaging'
+    _title: 'message'
+  requirements:
+    _custom_access:  '\Drupal\ms_react\Controller\messagingController::access'
+
+ms_react.delete_message_form:
+  path: '/ms/chat/{mid}/delete'
+  defaults:
+    _form: '\Drupal\ms_react\Form\deleteMessageForm'
+    _title: 'deleteMessageForm'
+  requirements:
+    _custom_access:  '\Drupal\ms_react\Form\deleteMessageForm::access'
+
+ms_react.all_message_controller_allMessage:
+  path: '/ms_react/all'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\allMessageController::allMessage'
+    _title: 'all message'
+  requirements:
+    _permission: 'view own message'
+
+ms_react.notofication_controller_Notofi:
+  path: '/ms_react/notofi'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\NotoficationController::Notofi'
+    _title_callback: '\Drupal\ms_react\Controller\NotoficationController::getTitle'
+  requirements:
+    _permission: 'view notification'
+
+ms_react.new_notification_controller_newNotofi:
+  path: '/ms_react/newnotofi'
+  defaults:
+    _controller: '\Drupal\ms_react\Controller\NewNotificationController::newNotofi'
+    _title_callback: '\Drupal\ms_react\Controller\NewNotificationController::getTitle'
+  requirements:
+    _permission: 'view notification'
+

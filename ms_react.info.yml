@@ -1,0 +1,5 @@
+name: 'ms_react'
+type: module
+description: 'message system react'
+core: 8.x
+package: 'ms react'

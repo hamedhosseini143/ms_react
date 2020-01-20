@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains ms_react.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ms_react_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ms_react module.
+    case 'help.page.ms_react':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('message system react') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ms_react_theme() {
+  return [
+    'ms_react' => [
+      'render element' => 'children',
+    ],
+    'ms_react_notification' => [
+      'variables' => [
+        'list_type' => NULL,
+        'items' => NULL,
+      ],
+    ],
+    'ms_react_notification_cunt' => [
+      'variables' => [
+        'items' => NULL,
+      ],
+    ],
+  ];
+}

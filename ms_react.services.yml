@@ -1,0 +1,4 @@
+services:
+  ms_react_api:
+    class: Drupal\ms_react\Controller\ApiController
+    arguments: ['@database']

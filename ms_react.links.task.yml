@@ -1,0 +1,33 @@
+ms_react.msreact_menu_menu:
+  title: 'message'
+  route_name: ms_react.messaging_controller_messaging
+  base_route: ms_react.messaging_controller_messaging
+ms_react.msreact_menu_menu_taba:
+  title: 'delete'
+  route_name: ms_react.delete_message_form
+  base_route: ms_react.messaging_controller_messaging
+
+ms_react.allmessage:
+  title: 'all message'
+  route_name: ms_react.all_message_controller_allMessage
+  base_route: ms_react.all_message_controller_allMessage
+
+ms_react.allmessagesend_tab:
+  title: 'send'
+  route_name: ms_react.show_all_message_controller_allMessage
+  base_route: ms_react.all_message_controller_allMessage
+
+ms_react.allmessagerecive_tab:
+  title: 'receive'
+  route_name: ms_react.inbox_message_controller_InboxMessage
+  base_route: ms_react.all_message_controller_allMessage
+
+ms_react.allNotfication:
+  title: 'all notification'
+  route_name: ms_react.notofication_controller_Notofi
+  base_route: ms_react.notofication_controller_Notofi
+
+ms_react.allNotfication_tab:
+  title: 'new notification'
+  route_name: ms_react.new_notification_controller_newNotofi
+  base_route: ms_react.notofication_controller_Notofi

@@ -1,0 +1,221 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the sqrcode module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function ms_react_schema() {
+  $schema['ms_react_index'] = [
+    'description' => 'holds indexing information about messages and recipients for fast retrieval',
+    'fields' => [
+      'm_id' => [
+        'description' => 'Message id',
+        'type'     => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'us_seId' => [
+        'description' => 'User send message id ',
+        'type'     => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'us_reId' => [
+        'description' => 'User receive message id ',
+        'type'     => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'is_new'     => [
+        'description'   => 'Whether the user has read this message',
+        'type'          => 'int',
+        'default'       => 1,
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ],
+      'send_only'     => [
+        'description'   => 'Whether the user has read this message',
+        'type'          => 'int',
+        'default'       => 1,
+        'not null'      => FALSE,
+        'unsigned'      => FALSE,
+      ],
+      'cr_time' => [
+        'description' => 'Time when the message was sent',
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'unsigned'    => TRUE,
+      ],
+      'up_time' => [
+        'description' => 'Time when the message was update',
+        'type'        => 'int',
+        'not null'    => FALSE,
+        'unsigned'    => TRUE,
+      ],
+    ],
+    'primary key'  => ['m_id']
+  ];
+  $schema['ms_react_sender'] = [
+    'description' => 'holds sende  information about messages',
+    'fields' => [
+        's_id' => [
+          'description' => 'sender id',
+          'type'     => 'serial',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+        ],
+          'mid' => [
+            'description'   => 'Message ID Message',
+            'type'          => 'int',
+            'not null'      => FALSE,
+            'unsigned'      => TRUE,
+          ],
+        'ms_id' => [
+          'description' => 'messages Id first for role message ',
+          'type'     => 'int',
+          'unsigned' => TRUE,
+          'not null' => FALSE,
+        ],
+        'us_id' => [
+          'description' => 'User send message id ',
+          'type'     => 'int',
+          'unsigned' => TRUE,
+          'not null' => FALSE,
+        ],
+        'ur_id' => [
+          'description' => 'User receive message id ',
+          'type'     => 'int',
+          'unsigned' => TRUE,
+          'not null' => FALSE,
+        ],
+      ],
+    'primary key'  => ['s_id']
+    ];
+  $schema ['ms_react_message'] =[
+    'description' => 'holds the list of message that have  messaging',
+    'fields' => [
+      'ms_id' => [
+        'description'   => 'Message ID Message',
+        'type'          => 'serial',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ],
+      'mid' => [
+        'description'   => 'Message ID Message',
+        'type'          => 'int',
+        'not null'      => FALSE,
+        'unsigned'      => TRUE,
+      ],
+      'author'     => [
+        'description'   => 'UID of the author',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ],
+      'body'     => [
+        'description'   => 'Body of the message',
+        'type'          => 'text',
+        'not null'      => TRUE,
+        'size'          => 'big',
+      ],
+      'file_id'     => [
+        'description'   => 'file id  of the message',
+        'type'          => 'int',
+        'not null'      => FALSE,
+        'unsigned'      => TRUE,
+      ],
+      'timestamp'     => [
+        'description'   => 'Time when the message was sent',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ],
+    ],
+    'primary key'  => ['ms_id']
+  ];
+  $schema ['ms_react_message_role'] =[
+    'description' => 'message body for role',
+    'fields' => [
+      'rmid' => [
+        'description' => 'Message id for role',
+        'type'     => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'author'     => [
+        'description'   => 'UID of the author',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ],
+      'body'     => [
+        'description'   => 'Body of the message',
+        'type'          => 'text',
+        'not null'      => TRUE,
+        'size'          => 'big',
+      ],
+      'file_id'     => [
+        'description'   => 'file id  of the message',
+        'type'          => 'int',
+        'not null'      => FALSE,
+        'unsigned'      => TRUE,
+      ],
+      'timestamp'     => [
+        'description'   => 'Time when the message was sent',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ],
+      ],
+    'primary key'  => ['rmid']
+  ];
+  $schema['ms_react_sender_role'] = [
+    'description' => 'holds sende  information about messages',
+    'fields' => [
+      'srid' => [
+        'description' => 'sender id',
+        'type'     => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'rmid' => [
+        'description' => 'messages Id first for role message ',
+        'type'     => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'is_new'     => [
+        'description'   => 'Whether the user has read this message',
+        'type'          => 'int',
+        'default'       => 1,
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ],
+      'us_id' => [
+        'description' => 'User send message id ',
+        'type'     => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'ur_id' => [
+        'description' => 'User receive message id ',
+        'type'     => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'creat'     => [
+        'description'   => 'Time when the message was sent',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ],
+    ],
+    'primary key'  => ['srid']
+  ];
+  return $schema;
+}
+
+

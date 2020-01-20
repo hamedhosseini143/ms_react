@@ -1,0 +1,12 @@
+ms_react.msreact_menu:
+  title: 'admin message'
+  route_name: ms_react.messaging_controller_messaging
+  base_route: ms_react.messaging_controller_messaging
+ms_react.message:
+  title: 'admin message'
+  route_name: ms_react.all_message_controller_allMessage
+  base_route: ms_react.all_message_controller_allMessage
+ms_react.notification:
+  title: 'my notification'
+  route_name: ms_react.notofication_controller_Notofi
+  base_route: ms_react.notofication_controller_Notofi

@@ -1,0 +1,27 @@
+.notification-list .nav-link {
+  color: #525f80;
+  display: block;
+}
+.notification-list i{
+  font-size: 24px;
+}
+.notification-list.list-inline-item:not(:last-child) {
+  margin-right: 0;
+}
+.notification-list .noti-icon-badge {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 12px;
+}
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,13 @@
+{
+    "name": "ms_react",
+    "type": "drupal-module",
+    "description": "message system react",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/ms_react",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/ms_react",
+        "source": "http://cgit.drupalcode.org/ms_react",
+    },
+}
